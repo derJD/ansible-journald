@@ -1,0 +1,5 @@
+---
+
+journald_options:
+  Storage: persistent
+  SystemMaxUse: 4G

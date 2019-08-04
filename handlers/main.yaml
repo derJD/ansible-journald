@@ -1,0 +1,4 @@
+---
+
+- name: restart journal
+  service: name=systemd-journald state=restarted

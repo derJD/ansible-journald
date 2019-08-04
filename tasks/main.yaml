@@ -1,0 +1,8 @@
+---
+
+- name: /var/log/journal/
+  file: name=/var/log/journal/ state=directory
+- name: /etc/systemd/journald.conf
+  ini_file: path=/etc/systemd/journald.conf section=Journal option={{ item }} value={{ journald_options[item] }}
+  notify: restart journal
+  with_items: "{{ journald_options }}"
